@@ -1,0 +1,32 @@
+class Player:
+
+    def getPlayer(self):
+        name = str(input("Please enter your name here: "))
+        print("Welcome to our little game %s" % name)
+        age = int(input("Please enter your age here: "))
+        if age < 18:
+            print("You are too young to gamble, please press any key to exit.")
+            exit()
+        else:
+            print("Welcome to the game. Let's gamble.")
+
+player1 = Player()
+player1.getPlayer()
+print(random.randint(1,10))
+
+class TakeGuess:
+    def takingGuess(self):
+        guess = str(input("Please make your guess:"))
+        guessList = {"Low", "low", "L", "l","High","high","H", "h"}
+        guess = guessList
+        if guess != guessList:
+            print("You have entered a wrong comamnd.")
+            print("Type 'commands' to see available commands")
+        commands = guessList
+        
+
+
+
+guess = TakeGuess()
+guessList=TakeGuess()
+guess.takingGuess()
