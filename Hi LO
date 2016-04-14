@@ -6,7 +6,7 @@ class Player:
         print("Welcome to our little game %s" % name)
         age = int(input("Please enter your age here: "))
         if age < 18:
-            print("You are too young to gamble, please press any key to exit.")
+            print("You are too young to gamble, exiting now.")
             exit()
         else:
             print("Welcome to the game. Let's gamble.")
