@@ -1,5 +1,6 @@
-class Player:
+import random, os,sys, msvcrt
 
+class Player:
     def getPlayer(self):
         name = str(input("Please enter your name here: "))
         print("Welcome to our little game %s" % name)
@@ -12,21 +13,22 @@ class Player:
 
 player1 = Player()
 player1.getPlayer()
-print(random.randint(1,10))
+x = random.randint(1,9)
+print(x)
 
 class TakeGuess:
     def takingGuess(self):
-        guess = str(input("Please make your guess:"))
-        guessList = {"Low", "low", "L", "l","High","high","H", "h"}
+        guessList = ("Low", "low", "L", "l","High","high","H", "h")
+        guess = str(input("Please make your guess: "))
         guess = guessList
-        if guess != guessList:
-            print("You have entered a wrong comamnd.")
-            print("Type 'commands' to see available commands")
-        commands = guessList
-        
-
+        while guess not in guessList:
+            print("You have entered a wrong command. Here is the available commands.")
+            print(guessList)
+            str(input("Make your guess from the available commands: "))
+        else:
+            print("You have guessed: "+str(input()))
 
 
 guess = TakeGuess()
-guessList=TakeGuess()
+guessList = TakeGuess()
 guess.takingGuess()
