@@ -1,34 +1,59 @@
-import random, os,sys, msvcrt
+import msvcrt
+import random
 
-class Player:
-    def getPlayer(self):
-        name = str(input("Please enter your name here: "))
-        print("Welcome to our little game %s" % name)
-        age = int(input("Please enter your age here: "))
-        if age < 18:
-            print("You are too young to gamble, exiting now.")
-            exit()
-        else:
-            print("Welcome to the game. Let's gamble.")
+name = str(input("Player, please enter your name: "))
+age = int(input("Welcome " + name +" please enter your age: "))
+if int(age) < 18:
+    print("You are too young. Please hit eny key to exit.")
+    msvcrt.getch()
+    exit()
+else:
+    print("Let's Play")
 
-player1 = Player()
-player1.getPlayer()
 x = random.randint(1,9)
-print(x)
+y = random.randint(1,9)
+print("Your first number is " + str(x))
+print("/n Do you think next one is higher or lower")
 
-class TakeGuess:
-    def takingGuess(self):
-        guessList = ("Low", "low", "L", "l","High","high","H", "h")
-        guess = str(input("Please make your guess: "))
-        guess = guessList
-        while guess not in guessList:
-            print("You have entered a wrong command. Here is the available commands.")
-            print(guessList)
-            str(input("Make your guess from the available commands: "))
-        else:
-            print("You have guessed: "+str(input()))
+list = ["l","h"]
+print("Your available answers are: " +str(list))
+counter = 0
+truecounter = 0
+falsecounter = 0
+while counter <= 10:
+    answer = str(input("Please enter your answer: "))
+    if str(answer) == str(list[1]) and y > x:
+        truecounter += 1
+        print("Your answer is correct!. The other number was "+ str(y))
+        x = random.randint(1,9)
+        y = random.randint(1,9)
+        print("Let's see if you can do it again. The number is")
+        print(x)
+        
+    elif str(answer) == str(list[0]) and y < x:
+        truecounter += 1
+        print("Your answer is correct!. The other number was "+ str(y))
+        x = random.randint(1,9)
+        y = random.randint(1,9)
+        print("Let's see if you can do it again. The number is")
+        print(x)
 
+    elif str(answer) == str(list[0]) and y > x:
+        falsecounter += 1
+        print("Ooops! You guessed wrong. The number was "+str(y))
+        x = random.randint(1,9)
+        y = random.randint(1,9)
+        print("Let's see if you can do it again. The number is")
+        print(x)
+    elif str(answer) == str(list[1]) and y < x:
+        falsecounter += 1
+        print("Ooops! You guessed wrong. The number was "+str(y))
+        x = random.randint(1,9)
+        y = random.randint(1,9)
+        print("Let's see if you can do it again. The number is")
+        print(x)
 
-guess = TakeGuess()
-guessList = TakeGuess()
-guess.takingGuess()
+    counter +=1
+
+print("Congrats! You got "+str(truecounter)+ " out of 10!")
+    
