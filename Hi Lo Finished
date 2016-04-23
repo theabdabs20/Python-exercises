@@ -13,7 +13,7 @@ else:
 x = random.randint(1,9)
 y = random.randint(1,9)
 print("Your first number is " + str(x))
-print("/n Do you think next one is higher or lower")
+print("Do you think next one is higher or lower")
 
 list = ["l","h"]
 print("Your available answers are: " +str(list))
