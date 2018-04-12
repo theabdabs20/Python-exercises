@@ -1,0 +1,12 @@
+print ("hello, this small app will calculate when will you turn 100 years old")
+
+name = str(input("Please tell me your name: "))
+print (name)
+print ("Thank you for the information you provided. " + str(name) + ". Now I need your age.")
+age_current = input("Please tell me your age: ")
+print ("Thank you once again")
+age100 = 100 - int(age_current)
+print("You will be 100 years old "+ str(age100)+ " years later.")
+currentyear = datetime.date.year
+age100_year = int(currentyear) + int(age100)
+print ("That means you will be 100 years old in " + str(age100_year))
