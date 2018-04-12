@@ -1,0 +1,20 @@
+print("Hello, this application will find if the numbers are even or odd")
+
+usernum = int(input("Please enter your desired number. We will check if it is even or odd: "))
+print(usernum)
+if usernum % 2 == 0:
+    print("your number was "+ str(usernum) +" and it is even.")
+else:
+    print ("your number was "+ str(usernum) +" and it is odd")
+
+print("give me two number now so we can check if they are dividable.")
+num1= int(input("Enter your first number, please: "))
+print (num1)
+num2 = int(input("Enter your second number please: "))
+print(num2)
+
+if num1 % num2 == 0:
+    print("they are dividable. And the result is "+ str(num1/num2))
+else:
+    x = num1/num2
+    print("They are not dividable. The result was " + str(x))
